@@ -13,7 +13,7 @@ public class DeleteStudent {
 		PreparedStatement pstmt = null;
 		Connection con = null;
 		con = dbConnector.getConnector();
-		//FetchAllStudents.printAllStudents();
+		FetchAllStudents.printAllStudents();
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter Student id to delete :");
 		int sid = sc.nextInt();
