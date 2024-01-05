@@ -1,0 +1,10 @@
+127.0.0.1 - - [05/Jan/2024:12:00:26 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [05/Jan/2024:12:00:26 +0530] "GET /StudentWebApp/Login.html HTTP/1.1" 200 599
+0:0:0:0:0:0:0:1 - - [05/Jan/2024:12:00:35 +0530] "POST /StudentWebApp/LoginServlet HTTP/1.1" 404 775
+127.0.0.1 - - [05/Jan/2024:12:02:16 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [05/Jan/2024:12:02:17 +0530] "GET /StudentWebApp/TCHomePage HTTP/1.1" 200 226
+0:0:0:0:0:0:0:1 - - [05/Jan/2024:12:02:56 +0530] "GET /StudentWebApp/Logout HTTP/1.1" 200 599
+0:0:0:0:0:0:0:1 - - [05/Jan/2024:12:03:14 +0530] "POST /StudentWebApp/LoginServlet HTTP/1.1" 404 775
+0:0:0:0:0:0:0:1 - - [05/Jan/2024:12:03:19 +0530] "POST /StudentWebApp/LoginServlet HTTP/1.1" 404 775
+127.0.0.1 - - [05/Jan/2024:12:04:48 +0530] "GET / HTTP/1.1" 404 751
+127.0.0.1 - - [05/Jan/2024:12:05:05 +0530] "GET / HTTP/1.1" 404 751
