@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="java.util.List, com.dto.Student"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>GetAllStds</title>
+</head>
+<body>
+ 
+ 
+	<%@ include file="TCHomePage.jsp" %>
+
+	<% List<Student> stdList = (List<Student>) request.getAttribute("stdList"); %>
+
+	<table border="2" align="center">
+
+		<tr>
+			<th>stdId</th>
+			<th>stdName</th>
+			<th>Batch</th>
+			<th>Gender</th>
+			<th>Email-Id</th>
+		</tr>
+
+		<%  for (Student std : stdList) { %>
+		<tr align="center">
+			<td> <%= std.getstdId()   %> </td>
+			<td> <%= std.getstdName() %> </td>
+			<td> <%= std.getBatch()  %> </td>
+			<td> <%= std.getGender()  %> </td>
+			<td> <%= std.getEmailId() %> </td>
+		</tr>
+		<% } %>
+
+	</table>
+
+</body>
+</html>

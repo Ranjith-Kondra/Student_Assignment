@@ -1,0 +1,10 @@
+127.0.0.1 - - [08/Jan/2024:11:55:16 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [08/Jan/2024:11:55:16 +0530] "GET /StudentWebApp/Login.html HTTP/1.1" 200 599
+0:0:0:0:0:0:0:1 - - [08/Jan/2024:11:55:26 +0530] "POST /StudentWebApp/LoginServlet HTTP/1.1" 200 332
+0:0:0:0:0:0:0:1 - - [08/Jan/2024:11:55:29 +0530] "GET /StudentWebApp/GetAllStd HTTP/1.1" 200 786
+0:0:0:0:0:0:0:1 - - [08/Jan/2024:11:55:31 +0530] "GET /StudentWebApp/GetStdById.html HTTP/1.1" 200 396
+0:0:0:0:0:0:0:1 - - [08/Jan/2024:11:55:38 +0530] "POST /StudentWebApp/GetStdById HTTP/1.1" 200 582
+0:0:0:0:0:0:0:1 - - [08/Jan/2024:11:55:41 +0530] "GET /StudentWebApp/Logout HTTP/1.1" 200 599
+0:0:0:0:0:0:0:1 - - [08/Jan/2024:11:55:56 +0530] "POST /StudentWebApp/LoginServlet HTTP/1.1" 200 717
+0:0:0:0:0:0:0:1 - - [08/Jan/2024:11:56:06 +0530] "POST /StudentWebApp/LoginServlet HTTP/1.1" 200 717
+0:0:0:0:0:0:0:1 - - [08/Jan/2024:11:58:12 +0530] "POST /StudentWebApp/LoginServlet HTTP/1.1" 200 271

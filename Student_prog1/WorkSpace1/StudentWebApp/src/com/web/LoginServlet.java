@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.dao.StudentDAO;
 import com.dto.Student;
@@ -26,23 +27,29 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		String emailId = request.getParameter("emailId");
 		String password = request.getParameter("password");
 		
+		//Session object to store emailId
+				HttpSession session = request.getSession(true);
+				session.setAttribute("emailId", emailId);
+		
 		out.println("<html>");
-		if (emailId.equalsIgnoreCase("HR") && password.equals("HR")) {			
-			
-			RequestDispatcher rd = request.getRequestDispatcher("TCHomePage");
-			rd.forward(request, response);
-			
-		} else {			
+		if (emailId.equalsIgnoreCase("HR") && password.equals("HR")) {					
+			RequestDispatcher rd = request.getRequestDispatcher("TCHomePage.jsp");
+			rd.forward(request, response);			
+		}
+          else {			
 			
 			
 			StudentDAO stdDao = new StudentDAO();
 			Student std = stdDao.stdLogin(emailId, password);
 			
 			if (std != null) {
-				
-				RequestDispatcher rd = request.getRequestDispatcher("StudentHomePage");
-				rd.forward(request, response);
-				
+
+			    //Store Employee information(Object) under Session
+			    session.setAttribute("std", std);
+							
+			    RequestDispatcher rd = request.getRequestDispatcher("StudentHomePage.jsp");
+			    rd.forward(request, response);
+							
 			} else {
 				out.println("<body bgcolor='lightyellow' text='red'>");
 				out.println("<center>");

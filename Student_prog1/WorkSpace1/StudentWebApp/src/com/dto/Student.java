@@ -2,9 +2,10 @@ package com.dto;
 
 
 	public class Student {
+		
 		private int stdId;
 		private String stdName;
-		private String Batch;
+		private String batch;
 		private String gender;
 		private String emailId;
 		private String password;
@@ -13,11 +14,11 @@ package com.dto;
 			super();
 		}
 
-		public Student(int stdId, String stdName, String Batch, String gender, String emailId, String password) {
+		public Student(int stdId, String stdName, String batch, String gender, String emailId, String password) {
 			super();
 			this.stdId = stdId;
 			this.stdName = stdName;
-			this.Batch= Batch;
+			this.batch= batch;
 			this.gender = gender;
 			this.emailId = emailId;
 			this.password = password;
@@ -38,10 +39,10 @@ package com.dto;
 		}
 
 		public String getBatch() {
-			return Batch;
+			return batch;
 		}
-		public void setBatch(String Batch) {
-			this.Batch = Batch;
+		public void setBatch(String batch) {
+			this.batch = batch;
 		}
 
 		public String getGender() {
@@ -67,7 +68,7 @@ package com.dto;
 
 		@Override
 		public String toString() {
-			return "Employee [stdId=" + stdId + ", stdName=" + stdName + ", Batch=" + Batch + ", gender=" + gender
+			return "Employee [stdId=" + stdId + ", stdName=" + stdName + ", Batch=" + batch + ", gender=" + gender
 					+ ", emailId=" + emailId + ", password=" + password + "]";
 		}
 	}
