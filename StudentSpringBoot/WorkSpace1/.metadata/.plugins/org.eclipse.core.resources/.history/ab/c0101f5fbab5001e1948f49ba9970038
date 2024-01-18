@@ -1,0 +1,51 @@
+package com.model;
+
+public class Student {
+	private int stdId;
+	private String stdName;
+	private String Course;
+        private double fee;
+	
+	public Student() {
+		super();
+	}
+
+	public Student(int stdId, String stdName, String Course, double fee) {
+		super();
+		this.stdId = stdId;
+		this.stdName = stdName;
+		this.Course = Course;
+	}
+
+	public int getStdId() {
+		return stdId;
+	}
+	public void setStdId(int stdId) {
+		this.stdId = stdId;
+	}
+
+	public String getStdName() {
+		return stdName;
+	}
+	public void setStdName(String stdName) {
+		this.stdName = stdName;
+	}
+
+	public String getCourse() {
+		return Course;
+	}
+	public void setCourse(String Course) {
+		this.Course = Course;
+	}
+	public double getFee() {
+		return fee;
+	}
+	public void setFee(double fee) {
+		this.fee = fee;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [stdId=" + stdId + ", stdName=" + stdName + ", Course=" + Course + ", fee=" + fee +"]";
+	}	
+}
