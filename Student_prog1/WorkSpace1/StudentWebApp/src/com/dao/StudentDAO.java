@@ -55,40 +55,40 @@ public class StudentDAO {
 
 		return null;
 	}
-	
-	
+
+
 	public List<Student> getAllStudents() {
 		Connection con = dbConnection.getConnection();
 		PreparedStatement pst = null;
 		ResultSet rs = null;		
 		List<Student> stdList = null;
-		
+
 		String selectQuery = "Select * from student";
-		
-		
+
+
 		try {
 			pst = con.prepareStatement(selectQuery);
 			rs = pst.executeQuery();
-			
+
 			stdList = new ArrayList<Student>();
-			
+
 			while (rs.next()) {
 				Student std = new Student();
-				
+
 				std.setstdId(rs.getInt(1));
 				std.setstdName(rs.getString(2));
 				std.setBatch(rs.getString(3));
 				std.setGender(rs.getString(4));
 				std.setEmailId(rs.getString(5));
 				std.setPassword(rs.getString(6));
-				
+
 				stdList.add(std);
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		finally {
 			if (con != null) {
 				try {
@@ -106,25 +106,25 @@ public class StudentDAO {
 	public int registerStudent(Student std) {
 		Connection con = dbConnection.getConnection();
 		PreparedStatement pst = null;
-		
+
 		String insertQuery = "insert into student " + 
-		"(stdName, Batch, gender, emailId, password) values (?, ?, ?, ?, ?)";
-		
+				"(stdName, Batch, gender, emailId, password) values (?, ?, ?, ?, ?)";
+
 		try {
 			pst = con.prepareStatement(insertQuery);
-			
+
 			pst.setString(1, std.getstdName());
 			pst.setString(2, std.getBatch());
 			pst.setString(3, std.getGender());
 			pst.setString(4, std.getEmailId());
 			pst.setString(5, std.getPassword());
-			
+
 			return pst.executeUpdate();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		finally {
 			if (con != null) {
 				try {
@@ -135,7 +135,7 @@ public class StudentDAO {
 				}
 			}
 		}
-		
+
 		return 0;
 	}
 
@@ -143,33 +143,33 @@ public class StudentDAO {
 		Connection con = dbConnection.getConnection();
 		PreparedStatement pst = null;
 		ResultSet rs = null;
-		
+
 		String selectQuery = "Select * from student where stdId=?";
-		
-		
+
+
 		try {
 			pst = con.prepareStatement(selectQuery);
 			pst.setInt(1, stdId);
 			rs = pst.executeQuery();
-			
+
 			if (rs.next()) {
-				
+
 				Student std = new Student();
-				
+
 				std.setstdId(rs.getInt(1));
 				std.setstdName(rs.getString(2));
 				std.setBatch(rs.getString(3));
 				std.setGender(rs.getString(4));
 				std.setEmailId(rs.getString(5));
 				std.setPassword(rs.getString(6));
-				
+
 				return std;
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		finally {
 			if (con != null) {
 				try {
@@ -188,20 +188,20 @@ public class StudentDAO {
 	public int deleteStudent(int stdId) {
 		Connection con = dbConnection.getConnection();
 		PreparedStatement pst = null;
-		
+
 		String deleteQuery = "delete from student where stdId=?";
-		
-		
+
+
 		try {
 			pst = con.prepareStatement(deleteQuery);
 			pst.setInt(1, stdId);
-			
+
 			return pst.executeUpdate();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		finally {
 			if (con != null) {
 				try {
@@ -216,29 +216,29 @@ public class StudentDAO {
 	}
 
 
-public int updateStudent(Student std) {
-		
+	public int updateStudent(Student std) {
+
 		Connection con = dbConnection.getConnection();
 		PreparedStatement pst = null;
-		
+
 		String updateQuery = "update Student set stdName=?, batch=?, gender=?, emailId=?, password=? where stdId=?";
-		
+
 		try {
 			pst = con.prepareStatement(updateQuery);
-			
+
 			pst.setString(1, std.getstdName());
 			pst.setString(2, std.getBatch());
 			pst.setString(3, std.getGender());
 			pst.setString(4, std.getEmailId());
 			pst.setString(5, std.getPassword());
 			pst.setInt(6, std.getstdId());
-			
+
 			return pst.executeUpdate();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		finally {
 			if (con != null) {
 				try {
@@ -254,5 +254,5 @@ public int updateStudent(Student std) {
 	}
 
 
-	}
+}
 
